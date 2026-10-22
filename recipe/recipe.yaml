@@ -13,7 +13,7 @@ source:
   sha256: f0e50e61a5e3d21917d273b5af8a4375a48227e36fb6bdd952359933f40e9642
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -32,7 +32,9 @@ tests:
       imports:
         - aia_chaser
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version: 
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Chase authority information access from a host certificate to complete the chain of trust.
