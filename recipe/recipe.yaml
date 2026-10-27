@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: aia-chaser
-  version: "3.5.0"
+  version: "3.6.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/aia_chaser-${{ version }}.tar.gz
-  sha256: f0e50e61a5e3d21917d273b5af8a4375a48227e36fb6bdd952359933f40e9642
+  sha256: 0ab8b79018ce1083f60b70deb6b063c381fb5755901a7964a4b15d3c1f11e5b2
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -26,13 +26,14 @@ requirements:
     - python >=${{ python_min }},<4.0.0
     - cryptography >=44.0.1
     - tenacity >=8
+    - cachetools >=5.2.0
 
 tests:
   - python:
       imports:
         - aia_chaser
       pip_check: true
-      python_version: 
+      python_version:
         - ${{ python_min }}.*
         - "*"
 
