@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: aia-chaser
-  version: "3.6.0"
+  version: "3.6.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/aia_chaser-${{ version }}.tar.gz
-  sha256: 0ab8b79018ce1083f60b70deb6b063c381fb5755901a7964a4b15d3c1f11e5b2
+  sha256: ce39680bfc58cd6055aaeb22310c0eeb83979aabef6312c2771dc41fea19564c
 
 build:
   number: 0
